@@ -30,7 +30,8 @@ class ViewController: UIViewController,UITableViewDataSource {
     
 //    セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return songNameArray.count
+        
         
     }
     
@@ -39,7 +40,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
-        cell?.textLabel?.text = "テスト"
+        cell?.textLabel?.text = songNameArray[indexPath.row]
         
         return cell!
         
